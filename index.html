@@ -32,7 +32,7 @@
                 <!-- TODO: Add free response question here -->
                 <h3>What country does “The Jungle Book” take place in?</h3>
                 <input type="text" id="answer">
-                <button>Check</button>
+                <button class="check">Check</button>
                 <p id="answer2"></p>
             </div>
 
@@ -53,17 +53,18 @@
                  });
                 }
 
-                document.querySelector('.Check').addEventListener('click',function(){
+                document.querySelector('.check').addEventListener('click', function () {
                 let answer = document.querySelector('#answer');
                 let answer2 = document.querySelector('#answer2');
-                if (answer.value === 'India' || answer.value === 'india' || answer.value === 'INDIA') {
+                if (answer.value.trim().toLowerCase() === 'india') {
                     answer.style.backgroundColor = 'green';
-                    document.querySelector('#answer2').innerHTML = 'correct!';
-                }else{
+                    answer2.innerHTML = 'correct!';
+                } else {
                     answer.style.backgroundColor = 'red';
-                    document.querySelector('#answer2').innerHTML = 'incorrect!';
+                    answer2.innerHTML = 'incorrect!';
                 }
                 });
+
                 });
 
 
